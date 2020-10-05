@@ -17,6 +17,12 @@ const App = () => {
   const [alert, setAlert] = useState(false)
   const [exist, setExist] = useState(false)
 
+  // Handling name
+  const isInputEnterName = event => {
+    if (event.keyCode === 13) setName(event.target.value)
+    setEnter(true)
+  }
+
   // Change data yesterday
   const onChangeDataYesterday = props => {
     setCurrentYesterday(props)
