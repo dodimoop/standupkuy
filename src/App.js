@@ -17,12 +17,6 @@ const App = () => {
   const [alert, setAlert] = useState(false)
   const [exist, setExist] = useState(false)
 
-  // Handling name
-  const isInputEnterName = event => {
-    if (event.keyCode === 13) setName(event.target.value)
-    setEnter(true)
-  }
-
   // Change data yesterday
   const onChangeDataYesterday = props => {
     setCurrentYesterday(props)
@@ -43,7 +37,6 @@ const App = () => {
               placeholder="Type your name here"
               className={classes.Input}
               value={currentName}
-              onPressEnter={isInputEnterName}
               onChange={e => setCurrentName(e.target.value)}
             />
           </>
