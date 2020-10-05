@@ -23,6 +23,37 @@ const App = () => {
     setEnter(true)
   }
 
+  // Handling Yesterday
+  const isInputEnterYesterday = event => {
+    if (currentYesterday === '' || currentYesterday === null) {
+      setAlert(true)
+    } else if (event.keyCode === 13) {
+      if (temp === '') {
+        const checkExistingDataYesterday = yesterdays.indexOf(currentYesterday)
+        // -1 is data not exist
+        if (checkExistingDataYesterday !== -1) {
+          setExist(true)
+        } else {
+          setExist(false)
+          setYesterdays([...yesterdays, event.target.value])
+        }
+
+        setAlert(false)
+      } else {
+        // eslint-disable-next-line no-plusplus
+        for (let index = 0; index < yesterdays.length; index++) {
+          const dataYesterday = yesterdays[index]
+          if (dataYesterday === temp) {
+            yesterdays[index] = event.target.value
+            setTemp('')
+            break
+          }
+        }
+      }
+      setCurrentYesterday('')
+    }
+  }
+
   // Change data yesterday
   const onChangeDataYesterday = props => {
     setCurrentYesterday(props)
@@ -54,6 +85,7 @@ const App = () => {
               placeholder="Type your yesterday's work here"
               className={classes.Input}
               value={currentYesterday}
+              onPressEnter={isInputEnterYesterday}
               onChange={e => setCurrentYesterday(e.target.value)}
             />
           </>
