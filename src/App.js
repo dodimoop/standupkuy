@@ -54,6 +54,12 @@ const App = () => {
     }
   }
 
+  // Remove data yesterdat
+  const onRemoveDataYesterday = props => {
+    const resultRemoveData = yesterdays.filter(yesterday => yesterday !== props)
+    setYesterdays(resultRemoveData)
+  }
+
   // Change data yesterday
   const onChangeDataYesterday = props => {
     setCurrentYesterday(props)
@@ -101,6 +107,7 @@ const App = () => {
               type="dashed"
               danger
               className={classes.buttonRemove}
+              onClick={() => onRemoveDataYesterday(yesterday)}
             >
               <DeleteOutlined />
             </Button>
