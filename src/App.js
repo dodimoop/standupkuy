@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Divider, Button } from 'antd'
+import { Divider, Button, Avatar } from 'antd'
 // import { isEmpty } from 'lodash'
 import { DeleteOutlined, EditOutlined } from '@ant-design/icons'
 import ReactTextFormat from 'react-text-format'
@@ -137,7 +137,18 @@ const App = () => {
         <Divider type="vertical" className={classes.Divider} />
       </div>
       <div className={classes.RightContent}>
-        {name === '' ? '' : `Name: ${name}`} <br />
+        <Avatar
+          size={64}
+          style={{ background: 'bisque', marginTop: 20 }}
+          src={
+            name.length > 0
+              ? 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png'
+              : 'https://www.iconpacks.net/icons/1/free-user-logout-icon-304-thumb.png'
+          }
+        />
+        <br />
+        {name === '' ? '' : `Name: ${name}`}
+        <br />
         {yesterdays}
       </div>
     </div>
