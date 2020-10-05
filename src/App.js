@@ -43,6 +43,7 @@ const App = () => {
               placeholder="Type your name here"
               className={classes.Input}
               value={currentName}
+              onPressEnter={isInputEnterName}
               onChange={e => setCurrentName(e.target.value)}
             />
           </>
