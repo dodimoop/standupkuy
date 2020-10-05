@@ -1,6 +1,6 @@
 ### Standupkuy Project
 
-[<img src="./src/image.png">](./src/image.png)
+[<img src="./public/image.png">](./public/image.png)
 
 **Follow the steps below:**
 1. You can clone this project (use HTTPS) and run `git clone https://github.com/dodimoop/standupkuy.git` on your terminal
